@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./App.css";
 import { Navbar, NavbarBrand } from "reactstrap";
 import Menu from "./components/MenuComponent";
+import { DISHES } from "./shared/dishes";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tasks: ["todo1", "todo2", "todo3", "todo4"]
+      dishes: DISHES
     };
   }
 
@@ -22,7 +23,7 @@ class App extends Component {
             <NavbarBrand href="/">Bhushan's Indian Restaurant</NavbarBrand>
           </div>
         </Navbar>
-        <Menu />
+        <Menu dishes={this.state.dishes} />
       </div>
     );
   }
